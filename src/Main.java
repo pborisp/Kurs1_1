@@ -98,6 +98,14 @@ public class Main {
         return maxRepeat;
     }
 
+    public static String xRepeat(String text, String l, int n) {
+        String str = text;
+        for (int i = 1; i < n; i++) {
+            str += l + text;
+        }
+        return str;
+    }
+
     public static void main(String[] args) {
         // Задача №1;
         System.out.println("Задача №1");
@@ -151,5 +159,12 @@ public class Main {
         String newText = "sfdfff hi ds dsddddsd hisasss jhh";
         System.out.println(countMaxRepeat(newText));
         System.out.println();
+
+        // Задача №3
+        System.out.println("Задача №3");
+        String word = "Hello";
+        String slash = " - - - ";
+        int repeat = 7;
+        System.out.println(xRepeat(word, slash, repeat));
     }
 }
