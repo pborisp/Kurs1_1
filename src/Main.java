@@ -9,10 +9,24 @@ public class Main {
         return s;
     }
 
+    public static String strCenter(String s1, String s2) {
+        String str = new String();
+        str = s1.substring(0, s1.length() / 2) + s2 + s1.substring(s1.length() / 2);
+        return str;
+    }
+
     public static void main(String[] args) {
         // Задача №1;
         System.out.println("Задача №1");
         StringBuilder str = doubleSymbol("Дублирующий текст!!");
         System.out.println(str);
+        System.out.println();
+
+        //Задача №2
+        System.out.println("Задача №2");
+        String str2 = new String();
+        str2 = strCenter("<<<>>>", "Привет мир!");
+        System.out.println(str2);
+        System.out.println();
     }
 }
