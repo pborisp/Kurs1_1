@@ -46,6 +46,18 @@ public class Main {
         return rezult;
     }
 
+    public static String plusTwoString(String a, String b) {
+        String rezult = "";
+        if (a.length() > b.length()) {
+            rezult += a.substring(a.length() - b.length()) + b;
+        } else if (a.length() < b.length()) {
+            rezult += a + b.substring(b.length() - a.length());
+        } else {
+            rezult = a + b;
+        }
+        return rezult;
+    }
+
     public static int findWord(String text) {
         int count = 0;
         for (int i = 0; i < text.length() - 1; i++) {
@@ -54,6 +66,16 @@ public class Main {
             }
         }
         return count;
+    }
+
+    public static void repeatEnd(String str, int num) {
+        int x;
+        for (int i = 0; i < num; i++) {
+            for (int j = num; j > 0; j--) {
+                System.out.print(str.charAt(str.length() - j));
+            }
+            System.out.println();
+        }
     }
 
     public static void main(String[] args) {
@@ -84,10 +106,24 @@ public class Main {
         System.out.println(changeEndSymbols2(str4));
         System.out.println();
 
-        //Задча №5
+        //Задача №5
         System.out.println("Задача №5");
+        String text1 = "Привет";
+        String text2 = "мир";
+        System.out.println(plusTwoString(text1, text2));
+        System.out.println();
+
+        //Задча №6
+        System.out.println("Задача №6");
         String sss = "sfdf hi ds dsddsd hisass jhh";
         System.out.println("слово ”hi” встречается в строке " + findWord(sss) + " раз(а)");
         System.out.println();
+
+        //Задача №7
+        System.out.println("Задача №7");
+        String text = "Привет мир! Это проверка";
+        int n = 5;
+        System.out.println(text);
+        repeatEnd(text, n);
     }
 }
