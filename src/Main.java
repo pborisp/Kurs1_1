@@ -33,7 +33,7 @@ public class Main {
 
     public static String changeEndSymbol(String str) {
         String s = "";
-        s = str.substring(0, str.length() - 2) + str.charAt(str.length() - 1) + str.charAt(str.length() - 2);
+        s += str.substring(0, str.length() - 2) + str.charAt(str.length() - 1) + str.charAt(str.length() - 2);
         return s;
     }
 
@@ -69,13 +69,33 @@ public class Main {
     }
 
     public static void repeatEnd(String str, int num) {
-        int x;
         for (int i = 0; i < num; i++) {
             for (int j = num; j > 0; j--) {
                 System.out.print(str.charAt(str.length() - j));
             }
             System.out.println();
         }
+    }
+
+    public static int countMaxRepeat(String text) {
+        char[] str = text.toCharArray();
+        int count = 1;
+        int maxRepeat = 0;
+        char a = text.charAt(0);
+        for (int i = 1; i < text.length(); i++) {
+            if (a == text.charAt(i)) {
+                a = text.charAt(i);
+                count++;
+            } else {
+                if (count > maxRepeat) {
+                    maxRepeat = count;
+                    count = 1;
+                }
+                a = text.charAt(i);
+                continue;
+            }
+        }
+        return maxRepeat;
     }
 
     public static void main(String[] args) {
@@ -125,5 +145,11 @@ public class Main {
         int n = 5;
         System.out.println(text);
         repeatEnd(text, n);
+
+        //Задча №8
+        System.out.println("Задача №8");
+        String newText = "sfdfff hi ds dsddddsd hisasss jhh";
+        System.out.println(countMaxRepeat(newText));
+        System.out.println();
     }
 }
