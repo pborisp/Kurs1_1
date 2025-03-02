@@ -24,7 +24,7 @@ public class Main {
 
         //Задача №2
         System.out.println("Задача №2");
-        String str2 = new String();
+        String str2;
         str2 = strCenter("<<<>>>", "Привет мир!");
         System.out.println(str2);
         System.out.println();
