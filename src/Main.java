@@ -31,6 +31,31 @@ public class Main {
         return c;
     }
 
+    public static String changeEndSymbol(String str) {
+        String s = "";
+        s = str.substring(0, str.length() - 2) + str.charAt(str.length() - 1) + str.charAt(str.length() - 2);
+        return s;
+    }
+
+    public static String changeEndSymbols2(String str) {
+        char[] symbolString = str.toCharArray();
+        char a = symbolString[str.length() - 2];
+        symbolString[str.length() - 2] = symbolString[str.length() - 1];
+        symbolString[str.length() - 1] = a;
+        String rezult = new String(symbolString);
+        return rezult;
+    }
+
+    public static int findWord(String text) {
+        int count = 0;
+        for (int i = 0; i < text.length() - 1; i++) {
+            if (text.charAt(i) == 'h' && text.charAt(i + 1) == 'i') {
+                count++;
+            }
+        }
+        return count;
+    }
+
     public static void main(String[] args) {
         // Задача №1;
         System.out.println("Задача №1");
@@ -51,5 +76,18 @@ public class Main {
         aa = "1";
         bb = "Привет";
         System.out.println(wrightFirstEnd(aa, bb));
+
+        //Задача №4
+        System.out.println("Задача №4");
+        String str4 = "Привет мир";
+        System.out.println(changeEndSymbol(str4));
+        System.out.println(changeEndSymbols2(str4));
+        System.out.println();
+
+        //Задча №5
+        System.out.println("Задача №5");
+        String sss = "sfdf hi ds dsddsd hisass jhh";
+        System.out.println("слово ”hi” встречается в строке " + findWord(sss) + " раз(а)");
+        System.out.println();
     }
 }
